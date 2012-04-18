@@ -24,6 +24,13 @@ $twigPath = CakePlugin::path('TwigView');
 require_once($twigPath . 'Vendor' . DS . 'Twig' . DS . 'lib' . DS . 'Twig' . DS . 'Autoloader.php');
 Twig_Autoloader::register();
 
+/**
+ * To load Twig Extensions in Vendor and start auto loader
+ *
+require_once($twigPath .'Vendor' . DS .'Twig-extensions' . DS .'lib' . DS .'Twig' . DS . 'Extensions' . DS . 'Autoloader.php');
+Twig_Extensions_Autoloader::register();
+**/
+
 // overwrite twig classes (thanks to autoload, no problem)
 require_once($twigPath . 'Lib' . DS . 'Twig_Node_Element.php');
 require_once($twigPath . 'Lib' . DS . 'Twig_Node_Trans.php');
@@ -37,6 +44,8 @@ require_once($twigPath . 'Lib' . DS . 'Twig_Extension_Number.php');
 
 // get twig core extension (overwrite trans block)
 require_once($twigPath . 'Lib' . DS . 'CoreExtension.php');
+
+require_once($twigPath . 'Lib' . DS . 'ExtensionIncludes.php');
 
 /**
  * TwigView for CakePHP
